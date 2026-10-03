@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+#main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: radial-gradient(circle at 20% 20%, #1c1c1c, #000 70%);
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 60px;
+}
+
+#nav h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#menu {
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+#menu:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+#full {
+    height: 100%;
+    width: 35%;
+    position: absolute;
+    top: 0;
+    right: -35%;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 10;
+}
+
+#close {
+    font-size: 1.8rem;
+    align-self: flex-end;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+#close:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(90deg);
+}
+
+#full h4 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #eaeaea;
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
+    transition: color 0.3s ease;
+}
+
+#full h4::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, #fff, #888);
+    transition: width 0.4s ease;
+}
+
+#full h4:hover {
+    color: #fff;
+}
+
+#full h4:hover::after {
+    width: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #nav {
+        padding: 20px 25px;
+    }
+    #full {
+        width: 75%;
+        right: -75%;
+        padding: 30px 25px;
+    }
+    #full h4 {
+        font-size: 1.6rem;
+    }
+}
